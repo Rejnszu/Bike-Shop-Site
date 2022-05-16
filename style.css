@@ -344,6 +344,13 @@ a:hover {
   height: 100%;
 }
 
+@media not all and (min-resolution: 0.001dpcm) {
+  @supports (-webkit-appearance: none) {
+    .biker__intro {
+      background-attachment: initial;
+    }
+  }
+}
 .intro_text_wrapper {
   display: flex;
   flex-direction: column;
