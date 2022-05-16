@@ -222,7 +222,7 @@ a {
     color: white;
     display: flex;
     flex-direction: column;
-    padding: 2rem;
+    padding: 1rem;
     width: 22rem;
     & label,
     & input {
@@ -233,7 +233,7 @@ a {
 .login__modal_close {
   position: absolute;
   right: 2px;
-  top: 2px;
+  top: -15px;
   font-size: 3rem;
   cursor: pointer;
 }
@@ -250,7 +250,8 @@ a {
 }
 .login_warning {
   color: red;
-  font-size: 0.75rem;
+  font-size: 1rem;
+  margin-bottom: 1rem;
   display: none;
   &.active {
     display: block;
@@ -273,7 +274,7 @@ a {
     color: white;
     display: flex;
     flex-direction: column;
-    padding: 2rem;
+    padding: 1rem;
     & label,
     & input {
       margin-bottom: 1rem;
@@ -283,13 +284,14 @@ a {
 .register__modal_close {
   position: absolute;
   right: 2px;
-  top: 2px;
+  top: -15px;
   font-size: 3rem;
   cursor: pointer;
 }
 .register_warning {
   color: red;
-  font-size: 0.75rem;
+  font-size: 1rem;
+  margin-bottom: 1rem;
   display: none;
   &.active {
     display: block;
@@ -297,7 +299,7 @@ a {
 }
 .register_warning_wrongPassword {
   color: red;
-  font-size: 0.75rem;
+  font-size: 1rem;
   display: none;
   &.active {
     display: block;
@@ -319,13 +321,13 @@ a {
     color: white;
     display: flex;
     flex-direction: column;
-    padding: 2rem;
+    padding: 1rem;
   }
 }
 // SITE INTRO
 .biker__intro {
   height: 100vh;
-  background-image: url(/assets/bikefrontNew.jpg);
+  background-image: url(/assets/frontbike.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

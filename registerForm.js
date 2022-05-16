@@ -68,7 +68,12 @@ registerForm.createAccount.addEventListener("click", function (e) {
   registerWarningWrongPassword.classList.remove("active");
 
   e.preventDefault();
-
+  for (let input of Object.values(registerForm.inputs)) {
+    if (input.value == "") {
+      input.nextElementSibling.classList.add("active");
+      return;
+    }
+  }
   if (registerForm.comparePassword()) {
     let acc = new Account(
       registerForm.inputs.username.value,
@@ -136,13 +141,3 @@ loginForm.logInAccountButton.addEventListener("click", function (e) {
     }
   }
 });
-
-// function registerFormValidation() {
-//   const registerWarning = document.querySelectorAll(".register_warning");
-//   registerWarning.forEach((warning) => warning.classList.remove("active"));
-//   for (let inputValue of Object.values(registerForm.inputs)) {
-//     if (inputValue.value == "") {
-//       inputValue.nextElementSibling.classList.add("active");
-//     }
-//   }
-// }
