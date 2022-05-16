@@ -1,8 +1,10 @@
 // LOGIN FORM / REGISTER FORM
+
 let accountsList = [];
+console.log(localStorage);
 const loginForm = {
   closeButton: document.querySelector(".login__modal_close"),
-  loginNavButton: document.querySelector(".login_button"),
+  loginNavButton: document.querySelectorAll(".login_button"),
   logInAccountButton: document.querySelector(".login__modal_login_button"),
   loginModal: document.querySelector(".login__modal"),
   modalForm: document.querySelector(".login__modal form"),
@@ -35,10 +37,13 @@ loginForm.closeButton.addEventListener(
   () => (loginForm.loginModal.style.display = "none")
 );
 
-loginForm.loginNavButton.addEventListener(
-  "click",
-  () => (loginForm.loginModal.style.display = "flex")
-);
+loginForm.loginNavButton.forEach((button) => {
+  button.addEventListener(
+    "click",
+    () => (loginForm.loginModal.style.display = "flex")
+  );
+});
+
 loginForm.moveToRegister.addEventListener("click", () => {
   loginForm.loginModal.style.display = "none";
   registerForm.registerModal.style.display = "flex";
@@ -74,6 +79,7 @@ registerForm.createAccount.addEventListener("click", function (e) {
       input.value = "";
     }
     accountsList.push(acc);
+    localStorage.setItem("accounts", JSON.stringify(accountsList));
 
     registerForm.registerModal.style.display = "none";
     registerForm.successfulRegistration.style.display = "flex";
@@ -81,45 +87,52 @@ registerForm.createAccount.addEventListener("click", function (e) {
     registerWarningWrongPassword.classList.add("active");
   }
 });
+
 registerForm.successfulRegistration.addEventListener("click", () => {
   registerForm.successfulRegistration.style.display = "none";
   loginForm.loginModal.style.display = "flex";
 });
 
 loginForm.logInAccountButton.addEventListener("click", function (e) {
-  let loginWarning = document.querySelectorAll(".login_warning");
+  let storageAccountList = JSON.parse(localStorage.getItem("accounts"));
   e.preventDefault();
   if (loginForm.logUserName.value == "") {
     loginForm.logUserName.nextElementSibling.classList.add("active");
     return;
   } else if (
-    !accountsList.some((user) => user.username === loginForm.logUserName.value)
+    !storageAccountList.some(
+      (user) => user.username === loginForm.logUserName.value
+    )
   ) {
     loginForm.logUserName.nextElementSibling.classList.add("active");
     return;
   } else if (
-    accountsList.some((user) => user.username === loginForm.logUserName.value)
+    storageAccountList.some(
+      (user) => user.username === loginForm.logUserName.value
+    )
   ) {
     loginForm.logUserName.nextElementSibling.classList.remove("active");
     if (loginForm.logUserPassword.value == "") {
       loginForm.logUserPassword.nextElementSibling.classList.add("active");
       return;
     } else if (
-      !accountsList.some(
+      !storageAccountList.some(
         (user) => user.password === loginForm.logUserPassword.value
       )
     ) {
       loginForm.logUserPassword.nextElementSibling.classList.add("active");
       return;
     } else if (
-      accountsList.some(
+      storageAccountList.some(
         (user) => user.password === loginForm.logUserPassword.value
       )
     ) {
       loginForm.logUserPassword.nextElementSibling.classList.remove("active");
       loginForm.loginModal.style.display = "none";
-      loginForm.loginNavButton.innerHTML = "Zalogowany";
-      loginForm.loginNavButton.style.pointerEvents = "none";
+      loginForm.loginNavButton.forEach((button) => {
+        button.innerHTML = "Zalogowany";
+        button.style.pointerEvents = "none";
+      });
     }
   }
 });
