@@ -569,6 +569,11 @@ a:hover {
     flex: 1 1 calc(50% - var(--gap));
     max-width: 50%;
   }
+
+  .prev,
+.next {
+    opacity: 1;
+  }
 }
 @media (max-width: 767px) {
   .product_card_wrapper {
