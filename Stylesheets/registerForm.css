@@ -1,0 +1,129 @@
+.login__modal {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(5px);
+  z-index: 200;
+  width: 100%;
+}
+.login__modal form {
+  position: relative;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  width: 22rem;
+}
+.login__modal form label,
+.login__modal form input {
+  margin-bottom: 1rem;
+}
+
+.login__modal_close {
+  position: absolute;
+  right: 2px;
+  top: -15px;
+  font-size: 3rem;
+  cursor: pointer;
+}
+
+.login__modal_register_text {
+  font-size: 0.9rem;
+}
+.login__modal_register_text span {
+  color: rgba(255, 0, 0, 0.8);
+  font-weight: 600;
+  cursor: pointer;
+}
+.login__modal_register_text span:hover {
+  color: red;
+}
+
+.login_warning {
+  color: red;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  display: none;
+}
+.login_warning.active {
+  display: block;
+}
+
+.register__modal {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(5px);
+  z-index: 200;
+  width: 100%;
+}
+.register__modal form {
+  width: 22rem;
+  position: relative;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+.register__modal form label,
+.register__modal form input {
+  margin-bottom: 1rem;
+}
+
+.register__modal_close {
+  position: absolute;
+  right: 2px;
+  top: -15px;
+  font-size: 3rem;
+  cursor: pointer;
+}
+
+.register_warning {
+  color: red;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  display: none;
+}
+.register_warning.active {
+  display: block;
+}
+
+.register_warning_wrongPassword {
+  color: red;
+  font-size: 1rem;
+  display: none;
+}
+.register_warning_wrongPassword.active {
+  display: block;
+}
+
+.successful_registration {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(5px);
+  z-index: 200;
+  width: 100%;
+}
+.successful_registration__innerContent {
+  width: auto;
+  position: relative;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+.successful_registration__innerContent p {
+  font-size: 1.5rem;
+}
+
+/*# sourceMappingURL=registerForm.css.map */

@@ -1,0 +1,221 @@
+.biker__contact {
+  padding: 7rem 2rem 7rem 2rem !important;
+  position: relative;
+}
+.biker__contact form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.biker__contact::after {
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 50%;
+  right: 0;
+  top: 0;
+  background-color: black;
+  z-index: -1;
+}
+.biker__contact::before {
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 50%;
+  left: 0;
+  top: 0;
+  background-color: white;
+  z-index: -1;
+  box-shadow: inset -15px -15px 8px 3px black;
+}
+
+.input-container {
+  position: relative;
+  padding-bottom: 3rem;
+}
+.input-container label {
+  position: absolute;
+  top: -25px;
+  left: 0px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.input-container input {
+  max-width: 100%;
+  width: 300px;
+  padding: 0.3rem 0.3rem 0.3rem 0.3rem;
+  border: none;
+  transition: box-shadow 0.3s;
+  border-bottom: 2px solid var(--main--color);
+}
+.input-container input:focus {
+  outline: none;
+}
+.input-container input:focus + span {
+  width: 100%;
+}
+.input-container input[type="number"]::-webkit-inner-spin-button,
+.input-container input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+.input-container .input-wrapper {
+  position: relative;
+}
+.input-container .input-wrapper span {
+  position: absolute;
+  width: 0;
+  height: 3px;
+  background-color: red;
+  bottom: -9px;
+  left: 0;
+  transition: width 0.5s;
+}
+.input-container textarea {
+  max-width: 100%;
+  width: 600px;
+  min-height: 10rem;
+  padding: 0.3rem 0rem 0 0.3rem;
+  transition: box-shadow 0.3s;
+  border: 2px solid var(--main--color);
+  border-radius: var(--global-border-radius);
+}
+.input-container textarea:focus {
+  border: 2px solid var(--main--color);
+  outline: none;
+  box-shadow: inset 0 0 5px 1px var(--main--color);
+}
+
+.biker__contact_map_container iframe {
+  max-width: 100%;
+  width: 100%;
+  height: 500px;
+  box-shadow: var(--box-shadow-for-img);
+  border-radius: var(--global-border-radius);
+}
+
+.warning {
+  color: red;
+  display: none;
+}
+.warning.active {
+  display: block;
+}
+
+@media (max-width: 767px) {
+  textarea {
+    width: 100%;
+  }
+
+  .input-container {
+    margin-bottom: 2rem;
+  }
+
+  .biker__contact_map_container {
+    margin-bottom: 5rem;
+  }
+
+  .biker__contact::after {
+    width: 100%;
+    height: 41%;
+    top: 0;
+  }
+
+  .biker__contact::before {
+    width: 100%;
+    bottom: 0;
+    height: 100%;
+    box-shadow: inset 0px 0px 8px 5px black;
+  }
+}
+.footer {
+  background-color: black;
+}
+.footer .row {
+  margin: 0 1.5rem 0 1.5rem;
+  padding: 1.5rem 0 1.5rem 0;
+  box-shadow: 0 0 20px 1px rgba(255, 255, 255, 0.2);
+  border-radius: var(--global-border-radius);
+}
+
+.footer__contact_info {
+  list-style: none;
+  align-items: center;
+  margin: 0;
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+
+.footer__contact_info__item {
+  color: white;
+}
+
+.footer__contact_info_adres {
+  display: flex;
+  flex-direction: column;
+  padding-left: clamp(1rem, 5vw, 5rem);
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  font-size: clamp(0.7rem, 2.5vw, 1.5rem);
+}
+.footer__contact_info_adres li {
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s;
+}
+.footer__contact_info_adres li:hover {
+  transform: translateX(10px);
+}
+.footer__contact_info_adres i {
+  font-size: 2rem;
+  margin-right: 2rem;
+  color: white;
+}
+
+.footer__contact_info_social {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.footer__contact_info_social a {
+  transition: all 0.5s;
+}
+.footer__contact_info_social a:hover {
+  transform: translateY(-10px);
+}
+.footer__contact_info_social i {
+  font-size: 3rem;
+  padding: 0rem 0.6rem 0rem 0.6rem;
+  color: black;
+  background-color: white;
+  border: 4px solid var(--main--color);
+  box-shadow: 0 0 0 5px white;
+  border-radius: var(--global-border-radius);
+  transition: all 0.5s;
+}
+.footer__contact_info_social i:hover {
+  color: white;
+  background-color: var(--main--color);
+  border: 4px solid white;
+  box-shadow: 0 0 0 5px var(--main--color);
+}
+
+@media (max-width: 950px) {
+  .footer__contact_info {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .footer__contact_info_adres {
+    align-items: center;
+    padding-left: 0;
+    margin-bottom: 3rem;
+  }
+
+  .footer__contact_info_adres li {
+    margin-bottom: 1rem;
+  }
+}

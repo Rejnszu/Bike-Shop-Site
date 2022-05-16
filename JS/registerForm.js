@@ -1,3 +1,4 @@
+"use strict";
 // LOGIN FORM / REGISTER FORM
 
 let accountsList = [];
