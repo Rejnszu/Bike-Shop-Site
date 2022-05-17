@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Merienda+One&display=swap");
-@import url(Stylesheets/navigation.css);
 @import url(Stylesheets/registerForm.css);
 @import url(Stylesheets/footer.css);
+@import url(Stylesheets/navigation.css);
 * {
   margin: 0;
   padding: 0;
