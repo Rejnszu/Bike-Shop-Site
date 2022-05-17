@@ -94,7 +94,7 @@ registerForm.createAccount.addEventListener("click", function (e) {
   }
 });
 
-registerForm.successfulRegistration.addEventListener("click", () => {
+registerForm.successfulRegistrationButton.addEventListener("click", () => {
   registerForm.successfulRegistration.style.display = "none";
   loginForm.loginModal.style.display = "flex";
 });
