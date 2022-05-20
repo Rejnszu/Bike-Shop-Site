@@ -61,7 +61,8 @@ a:hover {
   box-shadow: 0 0 0 7px var(--main--color);
   transition: all 0.2s;
 }
-.custom_button:focus, .custom_button:hover {
+.custom_button:focus,
+.custom_button:hover {
   outline: none;
   border: 2px solid var(--main--color);
   background-color: white;
@@ -210,7 +211,8 @@ a:hover {
   box-shadow: inset 0 0 30px 5px black;
   height: auto;
 }
-.biker__products_section:hover .prev, .biker__products_section:hover .next {
+.biker__products_section:hover .prev,
+.biker__products_section:hover .next {
   opacity: 1;
 }
 
@@ -333,7 +335,7 @@ a:hover {
   }
 
   .prev,
-.next {
+  .next {
     opacity: 1;
   }
 }
@@ -368,3 +370,6 @@ a:hover {
 }
 
 /*# sourceMappingURL=style.css.map */
+.test_nowego_brancha {
+  font-size: 3rem;
+}
