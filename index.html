@@ -15,6 +15,7 @@
     <script src="JS/navigation.js" defer></script>
     <script src="JS/contactForm.js" defer></script>
     <script src="JS/registerForm.js" defer></script>
+    <script src="JS/spanAppend.js" defer></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"
         defer></script>
@@ -28,6 +29,8 @@
 
 <body>
     <div class="biker__whole_site_wrapper">
+
+        <!-- NAWIGACJA -->
         <div class="hamburger">
             <span class="hamburger__element"></span>
             <span class="hamburger__element"></span>
@@ -49,8 +52,9 @@
             <a class="nav-link mobile__nav-link" href="#">Kontakt</a>
             <button type="button" class="custom_button login_button">Zaloguj się</button>
         </div>
-
-        <div class="login__modal">
+        <!-- LOGOWANIE/REJESTRACJA -->
+        <div class="backdrop"></div>
+        <div class="login__modal modals-center-positioner">
             <form action="">
                 <span class="login__modal_close"><i class="bi bi-x"></i></span>
                 <label for="login">Nazwa konta</label>
@@ -66,7 +70,7 @@
                 </p>
             </form>
         </div>
-        <div class="register__modal">
+        <div class="register__modal modals-center-positioner">
             <form action="">
                 <span class="register__modal_close"><i class="bi bi-x"></i></span>
                 <label for="login">Nazwa konta</label>
@@ -86,29 +90,25 @@
                 </p>
             </form>
         </div>
-        <div class="successful_registration">
+        <div class="successful_registration modals-center-positioner">
             <div class="successful_registration__innerContent">
                 <p>Gratuluje, właśnie udało ci się założyć konto!</p>
                 <button class="custom_button successful_registration_button">Przejdź do logowania</button>
             </div>
         </div>
-
+        <!-- GŁOWNA TREŚĆ STRONY -->
         <div class="container-fluid biker__intro ">
 
             <div class="row">
 
-                <div class="intro_text_wrapper intro_text_wrapper__upper">
-                    <p class="intro_big_text_upper">Dobry rower to pierwszy krok do lepszego życia!
-                        <span></span><span></span><span></span><span></span>
-                    </p>
+                <div class="intro-text-wrapper intro-text-wrapper__upper">
+                    <p class="intro__text intro_big_text_upper">Dobry rower to pierwszy krok do lepszego życia!</p>
                 </div>
-                <div class="intro_text_wrapper intro_text_wrapper__middle">
-                    <p class="intro_big_text_middle">Nie czekaj dłużej, przekonaj się
-                        sam!<span></span><span></span><span></span><span></span> </p>
+                <div class="intro-text-wrapper intro-text-wrapper__middle">
+                    <p class="intro__text intro_big_text_middle">Nie czekaj dłużej, przekonaj się sam!</p>
                 </div>
-                <div class="intro_text_wrapper intro_text_wrapper__lower ">
-                    <p class="intro_big_text_lower">U nas dostaniesz wszystko co będzie ci
-                        potrzebne!<span></span><span></span><span></span><span></span> </p>
+                <div class="intro-text-wrapper intro-text-wrapper__lower ">
+                    <p class="intro__text intro_big_text_lower">U nas dostaniesz wszystko co będzie ci potrzebne! </p>
                 </div>
             </div>
 
@@ -122,6 +122,17 @@
         </div>
         <div class="container-fluid section_padding biker__products_section ">
             <h2>Nasza oferta</h2>
+            <div class="row">
+                <div class="biker__products__navigation col-sm-12">
+                    <ul class="products__navigation__list">
+                        <li class="navigation__list__item">Rowery Miejskie</li>
+                        <li class="navigation__list__item">Rowery Górskie</li>
+                        <li class="navigation__list__item">Odzież</li>
+                        <li class="navigation__list__item">Części zamienne</li>
+                        <li class="navigation__list__item">Pozostały osprzęt</li>
+                    </ul>
+                </div>
+            </div>
             <div class="cards_group_container">
                 <div class="prev inactive"><i class="bi bi-arrow-left-circle"></i></div>
                 <div class="next"><i class="bi bi-arrow-right-circle"></i></div>
@@ -370,7 +381,8 @@
                 <div class="biker__contact_map_container col-sm-12 col-md-6 order-1 order-md-2"><iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6574.678730701761!2d18.549188529692803!3d54.36581671666894!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46fd75e29d7de8bb%3A0x4a2967763ef25740!2sRezerwat%20przyrody%20Dolina%20Strzy%C5%BCy!5e0!3m2!1spl!2spl!4v1651837626272!5m2!1spl!2spl"
                         style="border:0;" allowfullscreen="" loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
             </div>
         </div>
         <div class="footer section_padding container-fluid">

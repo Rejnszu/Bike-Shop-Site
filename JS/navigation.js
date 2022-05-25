@@ -11,6 +11,12 @@ navigationHamburger.addEventListener("click", () => {
   hamburgerElements.forEach((element) => element.classList.toggle("active"));
   mobileNavigation.classList.toggle("active");
 });
+navLinks.forEach((navLink) =>
+  navLink.addEventListener("click", () => {
+    mobileNavigation.classList.remove("active");
+    hamburgerElements.forEach((element) => element.classList.remove("active"));
+  })
+);
 
 const bikeIntroButton = document.querySelector(".bike__intro_button");
 

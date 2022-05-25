@@ -1,6 +1,6 @@
 "use strict";
 
-// KARUZELA
+// KARUZELA PRODUKTÓW
 const previousSlider = document.querySelector(".prev");
 const nextSlider = document.querySelector(".next");
 const productCardGroups = document.querySelectorAll(".product_card_group");

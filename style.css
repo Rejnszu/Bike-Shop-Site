@@ -2,6 +2,7 @@
 @import url(Stylesheets/registerForm.css);
 @import url(Stylesheets/navigation.css);
 @import url(Stylesheets/footer.css);
+@import url(Stylesheets/products.css);
 * {
   margin: 0;
   padding: 0;
@@ -16,7 +17,7 @@ html {
 :root {
   --main--color: black;
   --very--light-background--grey: rgba(0, 0, 0, 0.1);
-  --box-shadow-for-img: 2px 2px 5px 2px white;
+  --box-shadow-for-img: 2px 2px 5px 2px rgba(0, 0, 0, 0.2);
   --global-border-radius: 7px;
 }
 
@@ -52,7 +53,7 @@ a:hover {
 }
 
 .custom_button {
-  margin: 1rem auto 1rem auto;
+  margin: 0.65rem auto;
   padding: 0.3rem 0.4rem 0.3rem 0.4rem;
   border-radius: var(--global-border-radius);
   border: 2px solid white;
@@ -106,7 +107,11 @@ a:hover {
 .biker__intro .row {
   height: 100%;
 }
-
+.styled-spans {
+  position: absolute;
+  transition: all 0.5s;
+  z-index: -1;
+}
 @media not all and (min-resolution: 0.001dpcm) {
   @supports (-webkit-appearance: none) {
     .biker__intro {
@@ -114,22 +119,22 @@ a:hover {
     }
   }
 }
-.intro_text_wrapper {
+.intro-text-wrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
   width: 100%;
 }
-.intro_text_wrapper__upper {
+.intro-text-wrapper__upper {
   align-items: flex-start;
 }
-.intro_text_wrapper__middle {
+.intro-text-wrapper__middle {
   align-items: center;
 }
-.intro_text_wrapper__lower {
+.intro-text-wrapper__lower {
   align-items: flex-end;
 }
-.intro_text_wrapper p {
+.intro__text {
   padding: 1rem;
   position: relative;
   font-weight: 600;
@@ -137,10 +142,8 @@ a:hover {
   color: white;
   text-transform: uppercase;
 }
-.intro_text_wrapper p span {
-  position: absolute;
-}
-.intro_text_wrapper p span:nth-of-type(1) {
+
+.intro__text span:nth-of-type(1) {
   height: 80%;
   width: 3px;
   left: 0;
@@ -148,7 +151,7 @@ a:hover {
   transform: translateY(-50%);
   background-color: white;
 }
-.intro_text_wrapper p span:nth-of-type(2) {
+.intro__text span:nth-of-type(2) {
   height: 80%;
   width: 3px;
   right: 0;
@@ -156,7 +159,7 @@ a:hover {
   transform: translateY(-50%);
   background-color: white;
 }
-.intro_text_wrapper p span:nth-of-type(3) {
+.intro__text span:nth-of-type(3) {
   height: 3px;
   width: 95%;
   left: 50%;
@@ -164,7 +167,7 @@ a:hover {
   transform: translateX(-50%);
   background-color: white;
 }
-.intro_text_wrapper p span:nth-of-type(4) {
+.intro__text span:nth-of-type(4) {
   height: 3px;
   width: 95%;
   left: 50%;
@@ -207,144 +210,7 @@ a:hover {
     transform: translateY(25%);
   }
 }
-.biker__products_section {
-  box-shadow: inset 0 0 30px 5px black;
-  height: auto;
-}
-.biker__products_section:hover .prev,
-.biker__products_section:hover .next {
-  opacity: 1;
-}
 
-.cards_group_container {
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  overflow: hidden;
-}
-
-.prev,
-.next {
-  position: absolute;
-  cursor: pointer;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 3rem;
-  z-index: 50;
-  opacity: 0;
-  transition: all 0.2s;
-}
-
-.prev {
-  left: 10px;
-}
-
-.next {
-  right: 10px;
-}
-
-.next.inactive,
-.prev.inactive {
-  display: none;
-  pointer-events: none;
-}
-
-.product_card_group {
-  flex: 0 0 100%;
-  max-width: 100%;
-  padding: 4rem 0 2rem 0;
-  transition: all 0.3s;
-}
-
-.product_card_row {
-  padding: 0 1rem 0 1rem;
-  --gap: 80px;
-  row-gap: calc(var(--gap) * 2);
-  column-gap: var(--gap);
-}
-
-.product_card_positioner {
-  transform: translateY(-10%);
-}
-
-.product_card_wrapper {
-  position: relative;
-  text-align: center;
-  padding: 0 2rem 0 2rem;
-  flex: 1 1 calc(25% - var(--gap));
-  max-width: 25%;
-  box-shadow: 0 5px 15px 1px var(--very--light-background--grey);
-  border-radius: var(--global-border-radius);
-  height: auto;
-  transition: all 0.5s;
-}
-.product_card_wrapper:hover {
-  transform: translateY(-10px);
-}
-.product_card_wrapper::before {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  content: "";
-  width: 100%;
-  height: 100%;
-  clip-path: polygon(100% 0, 0% 100%, 100% 100%);
-  background-color: rgba(128, 128, 128, 0.1);
-  border-radius: var(--global-border-radius);
-}
-.product_card_wrapper p {
-  margin-bottom: 1rem;
-}
-
-.product_card_img_wrapper {
-  display: flex;
-  justify-content: center;
-}
-.product_card_img_wrapper img {
-  max-width: 70%;
-}
-
-.product_card_name {
-  font-weight: 700;
-  font-size: 1.5rem;
-}
-
-.product_card_description {
-  font-size: 0.75rem;
-  opacity: 0.8;
-}
-
-.product_card_price {
-  margin-top: 2rem;
-  font-weight: 700;
-  font-size: 2.5rem;
-  color: red;
-}
-
-.product_card_buttons_wrapper {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-}
-
-@media (max-width: 1500px) {
-  .product_card_wrapper {
-    flex: 1 1 calc(50% - var(--gap));
-    max-width: 50%;
-  }
-
-  .prev,
-  .next {
-    opacity: 1;
-  }
-}
-@media (max-width: 767px) {
-  .product_card_wrapper {
-    flex: 1 1 100%;
-    max-width: 100%;
-  }
-}
 .biker__lifestyle_section {
   min-height: 100vh;
   display: flex;

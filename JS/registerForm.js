@@ -2,7 +2,11 @@
 // LOGIN FORM / REGISTER FORM
 
 let accountsList = [];
-console.log(localStorage);
+const backdrop = document.querySelector(".backdrop");
+const activateBackdrop = () => (backdrop.style.display = "block");
+
+const deactivateBackdrop = () => (backdrop.style.display = "none");
+
 const loginForm = {
   closeButton: document.querySelector(".login__modal_close"),
   loginNavButton: document.querySelectorAll(".login_button"),
@@ -33,26 +37,26 @@ const registerForm = {
   },
 };
 
-loginForm.closeButton.addEventListener(
-  "click",
-  () => (loginForm.loginModal.style.display = "none")
-);
+loginForm.closeButton.addEventListener("click", () => {
+  loginForm.loginModal.style.display = "none";
+  deactivateBackdrop();
+});
 
 loginForm.loginNavButton.forEach((button) => {
-  button.addEventListener(
-    "click",
-    () => (loginForm.loginModal.style.display = "flex")
-  );
+  button.addEventListener("click", () => {
+    loginForm.loginModal.style.display = "flex";
+    activateBackdrop();
+  });
 });
 
 loginForm.moveToRegister.addEventListener("click", () => {
   loginForm.loginModal.style.display = "none";
   registerForm.registerModal.style.display = "flex";
 });
-registerForm.closeButton.addEventListener(
-  "click",
-  () => (registerForm.registerModal.style.display = "none")
-);
+registerForm.closeButton.addEventListener("click", () => {
+  registerForm.registerModal.style.display = "none";
+  deactivateBackdrop();
+});
 
 class Account {
   constructor(username, email, password) {
@@ -135,10 +139,17 @@ loginForm.logInAccountButton.addEventListener("click", function (e) {
     ) {
       loginForm.logUserPassword.nextElementSibling.classList.remove("active");
       loginForm.loginModal.style.display = "none";
+      deactivateBackdrop();
       loginForm.loginNavButton.forEach((button) => {
         button.innerHTML = "Zalogowany";
         button.style.pointerEvents = "none";
       });
     }
   }
+});
+
+backdrop.addEventListener("click", () => {
+  loginForm.loginModal.style.display = "none";
+  registerForm.registerModal.style.display = "none";
+  backdrop.style.display = "none";
 });
