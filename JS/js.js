@@ -1,5 +1,27 @@
 "use strict";
 
+// PRODUKTY SELECT MENU
+
+const mobileProductGroupSelect = document.querySelector(
+  ".products__group__mobile__select"
+);
+const mobileProductGroupList = document.querySelector(
+  ".products__group__mobile__dropdown-list"
+);
+const mobileProductGroupListItem = document.querySelectorAll(
+  ".products__group__mobile__dropdown-list li"
+);
+console.log(mobileProductGroupListItem);
+
+mobileProductGroupSelect.addEventListener("click", () => {
+  mobileProductGroupList.classList.toggle("active");
+});
+
+mobileProductGroupListItem.forEach((item) => {
+  item.addEventListener("click", (e) => {
+    mobileProductGroupSelect.innerText = e.target.textContent;
+  });
+});
 // KARUZELA PRODUKTÓW
 const previousSlider = document.querySelector(".prev");
 const nextSlider = document.querySelector(".next");

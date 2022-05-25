@@ -112,6 +112,8 @@ a:hover {
   transition: all 0.5s;
   z-index: -1;
 }
+.ready-for-span {
+}
 @media not all and (min-resolution: 0.001dpcm) {
   @supports (-webkit-appearance: none) {
     .biker__intro {
@@ -211,28 +213,71 @@ a:hover {
   }
 }
 
-.biker__lifestyle_section {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed;
-  background-image: url(assets/bikefirst.jpg);
-  padding: 7rem 2rem 7rem 2rem;
+.biker__lifestyle-section {
+  padding: 0 3rem;
 }
-
-.biker__lifestyle_row {
-  margin-bottom: 2rem;
-}
-
-.biker__lifestyle_container {
+.lifestyle__card {
+  position: relative;
   width: 100%;
-  height: 30rem;
+  min-height: 15rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: 15px;
+  padding: 2rem;
   border-radius: var(--global-border-radius);
-  background-color: rgba(0, 0, 0, 0.733);
+}
+.lifestyle__card::before {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 0;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: var(--global-border-radius);
 }
 
+.lifestyle__card--1 {
+  background-image: url(assets/group.jpg);
+}
+.lifestyle__card--2 {
+  background-image: url(assets/shape.jpg);
+}
+.lifestyle__card--3 {
+  background-image: url(assets/relax.jpg);
+}
+.lifestyle__button {
+  background-color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  position: absolute;
+  right: 20px;
+  top: 60%;
+  border-radius: var(--global-border-radius);
+  font-weight: 700;
+}
+.lifestyle__slogan-title {
+  position: relative;
+  color: white;
+  font-size: 1.5rem;
+  width: 80%;
+  margin-bottom: 1rem;
+}
+.lifestyle__slogan-text {
+  position: relative;
+  color: white;
+  width: 80%;
+}
+.lifestyle__button:focus {
+  border: none;
+  outline: none;
+}
 /*# sourceMappingURL=style.css.map */
+@media (max-width: 767px) {
+  .biker__lifestyle-section {
+    padding: 0 1rem;
+  }
+}

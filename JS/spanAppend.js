@@ -21,8 +21,6 @@ appendStyledSpansToElement(mobileNavLinks);
 const introSectionTexts = document.querySelectorAll(".intro__text");
 appendStyledSpansToElement(introSectionTexts);
 //NAWIGACJA PRODUKTÓW
-const productNavigationListItem = document.querySelectorAll(
-  ".navigation__list__item"
-);
+const productGroupListItem = document.querySelectorAll(".group__list__item");
 
-appendStyledSpansToElement(productNavigationListItem);
+appendStyledSpansToElement(productGroupListItem);
