@@ -11,15 +11,14 @@ const mobileProductGroupList = document.querySelector(
 const mobileProductGroupListItem = document.querySelectorAll(
   ".products__group__mobile__dropdown-list li"
 );
-console.log(mobileProductGroupListItem);
-
+const mobileSelector = document.querySelector(".mobile__select_selector");
 mobileProductGroupSelect.addEventListener("click", () => {
   mobileProductGroupList.classList.toggle("active");
 });
 
 mobileProductGroupListItem.forEach((item) => {
   item.addEventListener("click", (e) => {
-    mobileProductGroupSelect.innerText = e.target.textContent;
+    mobileSelector.textContent = e.target.textContent;
   });
 });
 // KARUZELA PRODUKTÓW

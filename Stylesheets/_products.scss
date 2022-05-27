@@ -64,13 +64,15 @@
 
 .biker__products__group__mobile {
   display: none;
-  margin-bottom: 8rem;
+  margin-bottom: 10rem;
   justify-content: center;
   width: 100%;
 }
 .products__group__mobile__select {
   border: 1px solid black;
   padding: 0.5rem 1rem;
+  width: 18rem;
+  max-width: 100%;
   cursor: pointer;
   position: relative;
 }
