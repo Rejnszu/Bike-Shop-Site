@@ -1,8 +1,8 @@
-.biker__products_section {
+.biker__products-section {
   height: auto;
 }
-.biker__products_section:hover .prev,
-.biker__products_section:hover .next {
+.biker__products-section:hover .prev,
+.biker__products-section:hover .next {
   opacity: 1;
 }
 
@@ -126,11 +126,11 @@
 }
 
 .prev {
-  left: 10px;
+  left: 0px;
 }
 
 .next {
-  right: 10px;
+  right: 0px;
 }
 
 .next.inactive,
@@ -214,7 +214,14 @@
 .product_card_buttons_wrapper {
   position: relative;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  & .custom_button {
+    box-shadow: none;
+  }
+  & i {
+    font-size: 1.5rem;
+    padding: 0.3rem 0.3rem;
+  }
 }
 
 @media (max-width: 1500px) {

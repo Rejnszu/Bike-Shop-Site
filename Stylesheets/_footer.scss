@@ -1,5 +1,4 @@
 .biker__contact {
-  padding: 7rem 2rem 7rem 2rem !important;
   position: relative;
 }
 .biker__contact form {
@@ -98,12 +97,12 @@
   }
 }
 .footer {
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.9);
 }
 .footer .row {
   margin: 0 1.5rem 0 1.5rem;
   padding: 1.5rem 0 1.5rem 0;
-  box-shadow: 0 0 20px 1px rgba(255, 255, 255, 0.2);
+  // box-shadow: 0 0 20px 1px rgba(255, 255, 255, 0.2);
   border-radius: var(--global-border-radius);
 }
 

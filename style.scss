@@ -1,8 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Merienda+One&display=swap");
-@import "Stylesheets/registerForm";
+
 @import "Stylesheets/navigation";
-@import "Stylesheets/footer";
+@import "Stylesheets/intro";
+@import "Stylesheets/about";
 @import "Stylesheets/products";
+@import "Stylesheets/lifestyle-section";
+@import "Stylesheets/trips";
+@import "Stylesheets/registerForm";
+@import "Stylesheets/footer";
 * {
   margin: 0;
   padding: 0;
@@ -21,10 +26,6 @@ html {
   --global-border-radius: 7px;
 }
 
-p {
-  margin-bottom: 0;
-}
-
 h1 {
   color: black;
   background-color: rgba(255, 255, 255, 0.493);
@@ -35,7 +36,8 @@ h1 {
 h2 {
   color: black;
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
+  font-weight: 600;
 }
 
 h3 {
@@ -79,205 +81,24 @@ a:hover {
   margin: 0;
 }
 
-.container-fluid {
-  padding: 0;
-}
-
 .biker__whole_site_wrapper {
   position: relative;
 }
 
 .section_padding {
-  padding: 7rem 0 7rem 0;
+  padding: 5rem 2rem 3rem 2rem;
 }
 
-.biker__intro {
-  height: 100vh;
-  background-image: url(assets/frontbike.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed;
-  padding: 3rem 3rem 7rem 3rem;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  z-index: 101;
-}
-.biker__intro .row {
-  height: 100%;
-}
 .styled-spans {
   position: absolute;
   transition: all 0.5s;
   z-index: -1;
 }
-.ready-for-span {
-}
+
 @media not all and (min-resolution: 0.001dpcm) {
   @supports (-webkit-appearance: none) {
     .biker__intro {
       background-attachment: initial;
     }
-  }
-}
-.intro-text-wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 100%;
-}
-.intro-text-wrapper__upper {
-  align-items: flex-start;
-}
-.intro-text-wrapper__middle {
-  align-items: center;
-}
-.intro-text-wrapper__lower {
-  align-items: flex-end;
-}
-.intro__text {
-  padding: 1rem;
-  position: relative;
-  font-weight: 600;
-  font-size: clamp(1rem, 2vw, 2.5rem);
-  color: white;
-  text-transform: uppercase;
-}
-
-.intro__text span:nth-of-type(1) {
-  height: 80%;
-  width: 3px;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: white;
-}
-.intro__text span:nth-of-type(2) {
-  height: 80%;
-  width: 3px;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: white;
-}
-.intro__text span:nth-of-type(3) {
-  height: 3px;
-  width: 95%;
-  left: 50%;
-  top: 0;
-  transform: translateX(-50%);
-  background-color: white;
-}
-.intro__text span:nth-of-type(4) {
-  height: 3px;
-  width: 95%;
-  left: 50%;
-  bottom: 0;
-  transform: translateX(-50%);
-  background-color: white;
-}
-
-.bike__intro_button_wrapper {
-  position: absolute;
-  bottom: 10%;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.bike__intro_button {
-  font-size: 2rem;
-  color: white;
-  padding: 0 0.5rem 0rem 0.5rem;
-  background-color: var(--main--color);
-  font-weight: 700;
-  border: 2px solid white;
-  box-shadow: 0 0 0 10px var(--main--color);
-  animation: IntroButtonAnimation 5s infinite;
-  border-radius: var(--global-border-radius);
-}
-.bike__intro_button:focus {
-  outline: none;
-  border: 2px solid white;
-}
-
-@keyframes IntroButtonAnimation {
-  0% {
-    transform: translateY(25%);
-  }
-  50% {
-    transform: translateY(-25%);
-  }
-  100% {
-    transform: translateY(25%);
-  }
-}
-
-.biker__lifestyle-section {
-  padding: 0 3rem;
-}
-.lifestyle__card {
-  position: relative;
-  width: 100%;
-  min-height: 15rem;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  margin-bottom: 15px;
-  padding: 2rem;
-  border-radius: var(--global-border-radius);
-}
-.lifestyle__card::before {
-  position: absolute;
-  background-color: rgba(0, 0, 0, 0.6);
-  z-index: 0;
-  content: "";
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: var(--global-border-radius);
-}
-
-.lifestyle__card--1 {
-  background-image: url(assets/group.jpg);
-}
-.lifestyle__card--2 {
-  background-image: url(assets/shape.jpg);
-}
-.lifestyle__card--3 {
-  background-image: url(assets/relax.jpg);
-}
-.lifestyle__button {
-  background-color: white;
-  border: none;
-  padding: 0.5rem 1rem;
-  font-size: 1.2rem;
-  position: absolute;
-  right: 20px;
-  top: 60%;
-  border-radius: var(--global-border-radius);
-  font-weight: 700;
-}
-.lifestyle__slogan-title {
-  position: relative;
-  color: white;
-  font-size: 1.5rem;
-  width: 80%;
-  margin-bottom: 1rem;
-}
-.lifestyle__slogan-text {
-  position: relative;
-  color: white;
-  width: 80%;
-}
-.lifestyle__button:focus {
-  border: none;
-  outline: none;
-}
-/*# sourceMappingURL=style.css.map */
-@media (max-width: 767px) {
-  .biker__lifestyle-section {
-    padding: 0 1rem;
   }
 }

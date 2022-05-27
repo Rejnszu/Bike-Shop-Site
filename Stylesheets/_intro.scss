@@ -1,0 +1,107 @@
+.biker__intro {
+  height: 100vh;
+  background-image: url(assets/frontbike.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 3rem 3rem 7rem 3rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 101;
+}
+.biker__intro .row {
+  height: 100%;
+}
+.intro-text-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+.intro-text-wrapper__upper {
+  align-items: flex-start;
+}
+.intro-text-wrapper__middle {
+  align-items: center;
+}
+.intro-text-wrapper__lower {
+  align-items: flex-end;
+}
+.intro__text {
+  padding: 1rem;
+  position: relative;
+  font-weight: 600;
+  font-size: clamp(1rem, 2vw, 2.5rem);
+  color: white;
+  text-transform: uppercase;
+}
+
+.intro__text span:nth-of-type(1) {
+  height: 80%;
+  width: 3px;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: white;
+}
+.intro__text span:nth-of-type(2) {
+  height: 80%;
+  width: 3px;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: white;
+}
+.intro__text span:nth-of-type(3) {
+  height: 3px;
+  width: 95%;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  background-color: white;
+}
+.intro__text span:nth-of-type(4) {
+  height: 3px;
+  width: 95%;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  background-color: white;
+}
+
+.bike__intro_button_wrapper {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.bike__intro_button {
+  font-size: 2rem;
+  color: white;
+  padding: 0 0.5rem 0rem 0.5rem;
+  background-color: var(--main--color);
+  font-weight: 700;
+  border: 2px solid white;
+  box-shadow: 0 0 0 10px var(--main--color);
+  animation: IntroButtonAnimation 5s infinite;
+  border-radius: var(--global-border-radius);
+}
+.bike__intro_button:focus {
+  outline: none;
+  border: 2px solid white;
+}
+
+@keyframes IntroButtonAnimation {
+  0% {
+    transform: translateY(25%);
+  }
+  50% {
+    transform: translateY(-25%);
+  }
+  100% {
+    transform: translateY(25%);
+  }
+}
