@@ -16,6 +16,7 @@
     <script src="JS/contactForm.js" defer></script>
     <script src="JS/registerForm.js" defer></script>
     <script src="JS/spanAppend.js" defer></script>
+    <script src="JS/products.js" defer></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"
         defer></script>
@@ -118,31 +119,40 @@
             </div>
         </div>
 
-        <div class="container-fluid biker__about section_padding">
+        <div class="container-fluid biker__about section_padding" id="about">
             <h2>Co nas wyróżnia?</h2>
             <div class="row">
-                <div class="col-md-12 col-lg-4 biker__about__inside__container
-                "><img src="assets/experience.png" alt="">
-                    <p class="about__container__title">Doświadczenie</p>
-                    <p class="about__container__text">Istniejemy na rynku od ponad 30 lat i ciągle zaskakujemy naszych
-                        klientów czymś nowym. Regularnie
-                        porzeszamy nasz asortyment, żeby nasi klienci dostawali to co najlepsze.</p>
+                <div class="col-md-12 col-lg-4">
+                    <div class="biker__about__inside__container">
+                        <img src="assets/experience.png" alt="">
+                        <p class="about__container__title">Doświadczenie</p>
+                        <p class="about__container__text">Istniejemy na rynku od ponad 30 lat i ciągle zaskakujemy
+                            naszych
+                            klientów czymś nowym. Regularnie
+                            porzeszamy nasz asortyment, żeby nasi klienci dostawali to co najlepsze.</p>
+                    </div>
                 </div>
-                <div class="col-md-12 col-lg-4 biker__about__inside__container
-                "><img src="assets/passion.png" alt="">
-                    <p class="about__container__title">Pasja</p>
-                    <p class="about__container__text">Sprzedaż rowerów to tylko jedna z wielu działalności naszej firmy.
-                        Regularnie angażujmy się we
-                        wszystkie rowerowe inicjatywy, dążac do tego żeby to co robimy nie było dla nas zwykłą pracą.
-                    </p>
+                <div class="col-md-12 col-lg-4">
+                    <div class="biker__about__inside__container">
+                        <img src="assets/passion.png" alt="">
+                        <p class="about__container__title">Pasja</p>
+                        <p class="about__container__text">Sprzedaż rowerów to tylko jedna z wielu działalności naszej
+                            firmy.
+                            Regularnie angażujmy się we
+                            wszystkie rowerowe inicjatywy, dążac do tego żeby to co robimy nie było dla nas zwykłą
+                            pracą.
+                        </p>
+                    </div>
                 </div>
-                <div class="col-md-12 col-lg-4 biker__about__inside__container
-                "><img src="assets/respect.png" alt="">
-                    <p class="about__container__title">Atomsfera</p>
-                    <p class="about__container__text">Kupując u nas poczujesz się jakbyś odwiedzał bliską rodzinę.
-                        Klient
-                        jest u nas stawiany zawsze na
-                        pierwszym miejscu.</p>
+                <div class="col-md-12 col-lg-4">
+                    <div class="biker__about__inside__container">
+                        <img src="assets/respect.png" alt="">
+                        <p class="about__container__title">Atomsfera</p>
+                        <p class="about__container__text">Kupując u nas poczujesz się jakbyś odwiedzał bliską rodzinę.
+                            Klient
+                            jest u nas stawiany zawsze na
+                            pierwszym miejscu.</p>
+                    </div>
                 </div>
             </div>
 
@@ -153,30 +163,30 @@
         <div class="row">
             <div class="biker__products__group col-sm-12">
                 <ul class="products__group__list">
-                    <li class="group__list__item">Rowery Miejskie</li>
-                    <li class="group__list__item">Rowery Górskie</li>
-                    <li class="group__list__item">Odzież</li>
-                    <li class="group__list__item">Części zamienne</li>
-                    <li class="group__list__item">Pozostały osprzęt</li>
+                    <li class="group__list__item" data-value="city">Rowery Miejskie</li>
+                    <li class="group__list__item" data-value="hills">Rowery Górskie</li>
+                    <li class="group__list__item" data-value="clothes">Odzież</li>
+                    <li class="group__list__item" data-value="parts">Części zamienne</li>
+                    <li class="group__list__item" data-value="rest">Pozostały osprzęt</li>
                 </ul>
             </div>
         </div>
         <div class="biker__products__group__mobile">
             <div class="products__group__mobile__select">
-                <p class="mobile__select_selector">Wybierz którąs kategorie</p>
+                <p class="mobile__select__selector">Wybierz którąs kategorie</p>
                 <ul class="products__group__mobile__dropdown-list">
-                    <li class="group__mobile__list__item" data-value-city>Rowery Miejskie</li>
-                    <li class="group__mobile__list__item" data-value-hills>Rowery Górskie</li>
-                    <li class="group__mobile__list__item" data-value-clothes>Odzież</li>
-                    <li class="group__mobile__list__item" data-value-parts>Części zamienne</li>
-                    <li class="group__mobile__list__item" data-value-rest>Pozostały osprzęt</li>
+                    <li class="group__mobile__list__item" data-value="city">Rowery Miejskie</li>
+                    <li class="group__mobile__list__item" data-value="hills">Rowery Górskie</li>
+                    <li class="group__mobile__list__item" data-value="clothes">Odzież</li>
+                    <li class="group__mobile__list__item" data-value="parts">Części zamienne</li>
+                    <li class="group__mobile__list__item" data-value="rest">Pozostały osprzęt</li>
                 </ul>
             </div>
 
 
 
         </div>
-        <div class="cards_group_container">
+        <div class="cards_group_container active" data-value="city">
             <div class="prev inactive"><i class="bi bi-arrow-left-circle"></i></div>
             <div class="next"><i class="bi bi-arrow-right-circle"></i></div>
             <div class="product_card_group">
@@ -366,6 +376,18 @@
                 </div>
             </div>
         </div>
+        <div class="cards_group_container" data-value="hills">
+            <h3>Wersja Demo Rowery górskie</h3>
+        </div>
+        <div class="cards_group_container" data-value="clothes">
+            <h3>Wersja Demo Odzież</h3>
+        </div>
+        <div class="cards_group_container" data-value="parts">
+            <h3>Wersja Demo Częsci zamiennie</h3>
+        </div>
+        <div class="cards_group_container" data-value="rest">
+            <h3>Wersja Demo Pozostały Osprzęt</h3>
+        </div>
     </div>
 
     <div class="container-fluid biker__lifestyle-section section_padding" id="lifestyle">
@@ -411,7 +433,7 @@
             </div>
             <div class="col-md-12 col-lg-6 trips__container trips__container--text">
                 <h4>W grupie lepiej!</h4>
-                <p class="trips__container__motivator">Nadal się wachasz czu dołączyć do nas? Poniższy tekst na
+                <p class="trips__container__motivator">Nadal się wachasz czy dołączyć do nas? Poniższy tekst na
                     pewno cię przekona! </p>
                 <p class="trips__container__answer">Lorem Ipsum is simply dummy text of the printing and typesetting
                     industry. Lorem Ipsum has been
