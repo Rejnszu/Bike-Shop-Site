@@ -1145,8 +1145,8 @@ a:hover {
   color: inherit;
 }
 
-.custom_button {
-  margin: 0.65rem auto;
+.custom-button {
+  margin: 0.65rem 0;
   padding: 0.3rem 0.4rem 0.3rem 0.4rem;
   border-radius: var(--global-border-radius);
   border: 2px solid white;
@@ -1156,13 +1156,25 @@ a:hover {
   transition: all 0.2s;
 }
 
-.custom_button:focus,
-.custom_button:hover {
+.custom-button:focus,
+.custom-button:hover {
   outline: none;
   border: 2px solid var(--main--color);
   background-color: white;
   color: var(--main--color);
   box-shadow: none;
+}
+
+.custom-button--margin {
+  margin: 0 auto;
+}
+
+.custom-button--login.inactive {
+  display: none;
+}
+
+.custom-button--logout.inactive {
+  display: none;
 }
 
 .important {

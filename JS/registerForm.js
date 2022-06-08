@@ -1,4 +1,5 @@
 "use strict";
+
 // LOGIN FORM / REGISTER FORM
 
 let accountsList = [];
@@ -9,7 +10,8 @@ const deactivateBackdrop = () => (backdrop.style.display = "none");
 
 const loginForm = {
   closeButton: document.querySelector(".login__modal_close"),
-  loginNavButton: document.querySelectorAll(".login_button"),
+  loginNavButton: document.querySelectorAll(".custom-button--login"),
+  logoutNavButton: document.querySelectorAll(".custom-button--logout"),
   logInAccountButton: document.querySelector(".login__modal_login_button"),
   loginModal: document.querySelector(".login__modal"),
   modalForm: document.querySelector(".login__modal form"),
@@ -140,13 +142,39 @@ loginForm.logInAccountButton.addEventListener("click", function (e) {
       loginForm.logUserPassword.nextElementSibling.classList.remove("active");
       loginForm.loginModal.style.display = "none";
       deactivateBackdrop();
-      loginForm.loginNavButton.forEach((button) => {
-        button.innerHTML = "Zalogowany";
-        button.style.pointerEvents = "none";
-      });
+      loggedIn();
     }
   }
+  localStorage.setItem("logged", 1);
 });
+
+function loggedIn() {
+  loginForm.loginNavButton.forEach((loginButton) => {
+    loginButton.classList.add("inactive");
+    loginForm.logoutNavButton.forEach((logoutButton) => {
+      logoutButton.classList.remove("inactive");
+      logoutButton.addEventListener("click", () => {
+        localStorage.setItem("logged", 2);
+        loggedOut();
+      });
+    });
+  });
+}
+
+function loggedOut() {
+  loginForm.loginNavButton.forEach((loginButton) => {
+    loginButton.classList.remove("inactive");
+    loginForm.logoutNavButton.forEach((logoutButton) => {
+      logoutButton.classList.add("inactive");
+    });
+  });
+}
+// Check If Logged
+if (localStorage.logged == 1) {
+  loggedIn();
+} else {
+  loggedOut();
+}
 
 backdrop.addEventListener("click", () => {
   loginForm.loginModal.style.display = "none";
