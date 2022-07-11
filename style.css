@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Merienda+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap");
 .hamburger {
   position: fixed;
   left: 10px;
@@ -181,11 +181,9 @@
   .navigation__desktop {
     display: none;
   }
-
   .hamburger {
     display: flex;
   }
-
   .navigation__mobile {
     display: flex;
   }
@@ -482,7 +480,6 @@
   .biker__products__group {
     display: none;
   }
-
   .biker__products__group__mobile {
     display: flex;
   }
@@ -627,7 +624,6 @@
     flex: 1 1 calc(50% - var(--gap));
     max-width: 50%;
   }
-
   .prev,
 .next {
     opacity: 1;
@@ -992,11 +988,9 @@
   textarea {
     width: 100%;
   }
-
   .input-container {
     margin-bottom: 2rem;
   }
-
   .biker__contact_map_container {
     margin-bottom: 5rem;
   }
@@ -1087,13 +1081,11 @@
     flex: 0 0 100%;
     max-width: 100%;
   }
-
   .footer__contact_info_adres {
     align-items: center;
     padding-left: 0;
     margin-bottom: 3rem;
   }
-
   .footer__contact_info_adres li {
     margin-bottom: 1rem;
   }
@@ -1102,7 +1094,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Merienda One", cursive;
+  font-family: "Inter", sans-serif;
 }
 
 html {
