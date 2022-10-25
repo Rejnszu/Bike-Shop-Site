@@ -1,7 +1,7 @@
 "use strict";
 
 // CONTACT FORM
-(function formValidation() {
+export default function formValidation() {
   const inputs = document.querySelectorAll(".input-container [data-input]");
   const formSubmitButton = document.getElementById("formSubmitButton");
   const warning = document.querySelectorAll(".warning");
@@ -34,4 +34,4 @@
       }
     })
   );
-})();
+}
